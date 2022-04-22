@@ -1,0 +1,70 @@
+:root {
+    --main-bg-color: #1c1917;
+    --off-black: #292524;
+    --gray: #44403c;
+    --white: #fafaf9;
+    --off-white: #d4d4d4;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../assets/fonts/Roboto-Regular.ttf");
+}
+body{
+    color: var(--white);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+header{
+    position: relative;
+    background-color: var(--main-bg-color);
+    min-height: 10%;
+}
+header h1{
+    font-size: 2rem;
+    padding: 1rem;
+    font-weight: bold;
+}
+.menuButton{
+    background-color: var(--main-bg-color);
+    position: absolute;
+    left: 1rem;
+    margin-top: 1rem;
+}
+main{
+    display: flex;
+    height: 85%;
+}
+.sidebar{
+    background-color: var(--main-bg-color);
+    min-width: clamp(300px, 25%, 30rem);
+    border-right: 10px solid var(--off-white);
+    border-top: 10px solid var(--off-white);
+}
+.sidebar h1{
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+.main{
+    background-color: var(--off-black);
+    width: 75%;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: #1c1917;
+    height: 5%;
+}
+.github{
+    transition: transform 0.3s ease-in-out;
+}
+.github:hover{
+    transform: rotate(360deg) scale(1.2);
+}
