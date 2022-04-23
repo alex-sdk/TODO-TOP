@@ -4,20 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO</title>
+    <title>TO DO</title>
 <script defer src="index.bundle.js"></script></head>
 <body>
     <header>
-        <button class="menuButton">
+        <button class="menuButton add">
             <img src="../src/assets/menu.svg" alt="menu button">
         </button>
         <h1>TODO LIST</h1>
     </header>
     <main>
         <sidebar class="sidebar">
-            <h1>PROJECTS</h1>
+            <div class="container">
+                <h1>PROJECTS</h1>
+                <button class="ha-svg">
+                    <img src="../src/assets/home.svg" alt="home button">
+                </button>
+            </div>
+            <div class="projects">
+                <div class="project"id="0">
+                    <button class="displayProject">
+                        Math Class
+                    </button>
+                    <button class="ha-svg">
+                        <img src="../src/assets/trash-2.svg" alt="">
+                    </button>
+                </div>
+                <div class="project"id="1">
+                    <button class="displayProject">
+                        Work
+                    </button>
+                    <button class="ha-svg">
+                        <img src="../src/assets/trash-2.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <button class="addButton"><img src="../src/assets/plus.svg">Add Project</button>
         </sidebar>
         <section class="main">
+            <div class="tasklist">
+                <div class="task-grid">
+                    <h2 class="title-task">Tasks</h2>
+                    <h2 class="projectname">Project</h2>
+                    <div class="taskContainer">
+                        <li>
+                            <div class="task" id="0">
+                                <input type="checkbox">
+                                <div class="project">Math Class</div>
+                                <div class="title">homework</div>
+                                <input type="date">
+                                <button class="fa-svg">
+                                    <img src="../src/assets/edit.svg" alt="edit button">
+                                </button>
+                                <button class="fa-svg">
+                                    <img src="../src/assets/trash-2.svg" alt="remove task button">
+                                </button>
+                            </div>
+                            <div class="task" id="1">
+                                <input type="checkbox">
+                                <div class="project">Work</div>
+                                <div class="title">meeting</div>
+                                <input type="date">
+                                <button class="fa-svg">
+                                    <img src="../src/assets/edit.svg" alt="edit button">
+                                </button>
+                                <button class="fa-svg">
+                                    <img src="../src/assets/trash-2.svg" alt="remove task button">
+                                </button>
+                            </div>
+                            <button class="addTask addButton"><img src="../src/assets/plus.svg">Add Task</button>
+                        </li>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
