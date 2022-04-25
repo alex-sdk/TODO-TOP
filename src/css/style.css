@@ -146,32 +146,49 @@ footer{
     margin: auto 10px auto;
     text-align: right;
 }
-.taskContainer{
+.tasksContainer{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     grid-row: 2/3;
     grid-column: 1/2;
 }
-.addTask{
-    width: 20%;
+.taskContainer{
+    border: 3px solid var(--main-bg-color);
+    padding: 10px;
 }
-
+.addTask{
+    width: 50%;
+    align-self: center;
+}
 .task{
     display: flex;
+    flex: 2 1 0;
     justify-content: space-between;
     align-items: center;
     margin: 1rem;
+}
+.date{
+    width: 25%;
+}
+.title{
+    width: 25%;
+}
+.details{
+    text-align: left;
 }
 .fa-svg{
     background-color: inherit;
 }
 .fa-svg:hover{
+    border-radius: 20%;
     background-color: #1c1917;
 }
 .fa-svg:active{
     background-color: #292524;
 }
 .ha-svg:hover{
+    border-radius: 20%;
     background-color: #292524;
 }
 .ha-svg{
@@ -198,4 +215,20 @@ footer{
 }
 .projects button:active{
     background-color: #1c1917;
+}
+.hide-menu{
+    display: none;
+}
+.adjust-main{
+    width: 100%;
+}
+
+
+
+
+/*media queries*/
+@media (max-width: 1070px) {
+    .task-grid{
+        width: 300px;
+    }
 }

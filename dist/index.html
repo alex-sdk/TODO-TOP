@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO DO</title>
-<script defer src="index.bundle.js"></script></head>
+<script defer src="index.bundle.js"></script><script defer src="menu.bundle.js"></script></head>
 <body>
     <header>
-        <button class="menuButton add">
+        <button class="menuButton">
             <img src="../src/assets/menu.svg" alt="menu button">
         </button>
         <h1>TODO LIST</h1>
@@ -46,13 +46,12 @@
                 <div class="task-grid">
                     <h2 class="title-task">Tasks</h2>
                     <h2 class="projectname">Project</h2>
-                    <div class="taskContainer">
-                        <li>
+                    <div class="tasksContainer">
+                        <div class="taskContainer">
                             <div class="task" id="0">
                                 <input type="checkbox">
-                                <div class="project">Math Class</div>
-                                <div class="title">homework</div>
-                                <input type="date">
+                                <div class="title">Math Class</div>
+                                <input class="date" type="date">
                                 <button class="fa-svg">
                                     <img src="../src/assets/edit.svg" alt="edit button">
                                 </button>
@@ -60,11 +59,15 @@
                                     <img src="../src/assets/trash-2.svg" alt="remove task button">
                                 </button>
                             </div>
+                            <div class="details">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero cum sed architecto, dicta, ratione a cupiditate consectetur excepturi esse nihil deleniti error! Autem praesentium, dicta pariatur officia itaque quam nemo.
+                            </div>
+                        </div>
+                        <div class="taskContainer">
                             <div class="task" id="1">
                                 <input type="checkbox">
-                                <div class="project">Work</div>
-                                <div class="title">meeting</div>
-                                <input type="date">
+                                <div class="title">Work</div>
+                                <input class="date" type="date">
                                 <button class="fa-svg">
                                     <img src="../src/assets/edit.svg" alt="edit button">
                                 </button>
@@ -72,8 +75,11 @@
                                     <img src="../src/assets/trash-2.svg" alt="remove task button">
                                 </button>
                             </div>
-                            <button class="addTask addButton"><img src="../src/assets/plus.svg">Add Task</button>
-                        </li>
+                            <div class="details">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero cum sed architecto, dicta, ratione a cupiditate consectetur excepturi esse nihil deleniti error! Autem praesentium, dicta pariatur officia itaque quam nemo.
+                            </div>
+                        </div>
+                        <button class="addTask addButton"><img src="../src/assets/plus.svg">Add Task</button>
                     </div>
                 </div>
             </div>
