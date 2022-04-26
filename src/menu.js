@@ -6,6 +6,5 @@ export default function displayMenu() {
     hamburger.addEventListener("click", () => {
         sidebar.classList.toggle("hide-menu");
         main.classList.toggle("adjust-main");
-    });
-    
+    });  
 }
