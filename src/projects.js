@@ -111,5 +111,5 @@ const defaultProject = new Project(defaultTitle, allTasks, allProjects);
 
 const projectList = document.querySelector(".projects");
 const addProjectBtn = document.getElementById("addProject");
-const addTaskBtn = document.querySelector(".addTask");
+const addTaskBtn = document.querySelector(".addButtonStyling");
 

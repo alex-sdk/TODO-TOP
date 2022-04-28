@@ -22,8 +22,6 @@ function createModal() {
     }
     
     const form = document.createElement("form");
-    form.action = "#";
-    form.method = "post";
     
     const closeButton = document.createElement("button");
     closeButton.id = "close-modal";
@@ -32,13 +30,15 @@ function createModal() {
     overlay.addEventListener("click", closeModal);
 
     const addButton = document.createElement("button");
+    addButton.classList.add("addTask")
     addButton.innerText = "Add Task";
     
     const div1 = createDivContainers("Task", true, 25, 1, "text");
     const div2 = createDivContainers("Date", true, 0, 0, "date");
     const div3 = createDivContainers("Description", false, 300);
 
-    modal.append(closeButton, div1, div2, div3, addButton)
+    form.append(closeButton, div1, div2, div3, addButton);
+    modal.append(form);
 }
 function openModal() {
     modal.classList.add("active");
