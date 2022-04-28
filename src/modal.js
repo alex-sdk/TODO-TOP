@@ -20,7 +20,6 @@ function createModal() {
         div.append(label, input);
         return div;
     }
-    
     const form = document.createElement("form");
     
     const closeButton = document.createElement("button");

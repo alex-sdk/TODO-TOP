@@ -4,7 +4,7 @@ export default function menuToggle() {
     const main = document.querySelector(".main");
 
     hamburger.addEventListener("click", () => {
-        sidebar.classList.toggle("hide-menu");
-        main.classList.toggle("adjust-main");
-    });  
+        sidebar.classList.toggle("deactivate-display");
+        main.classList.toggle("activate-display");
+    });
 }

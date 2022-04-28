@@ -24,7 +24,7 @@ main{
 }
 .main{
     background-color: var(--off-black);
-    width: 75%;
+    width: 100%;
 }
 header{
     position: relative;
@@ -136,12 +136,13 @@ footer{
 .projects{
     width: 95%;
 }
-.hide-menu{
+.deactivate-display{
     display: none;
 }
-.adjust-main{
-    width: 100%;
+.activate-display{
+    display: block !important;
 }
+
 .inputProject{
     margin-top: 1rem;
     font-size: 1rem;
@@ -191,6 +192,9 @@ footer{
     font-size: 1.40rem;
     font-weight: bold;
 }
+#Task{
+    width: 170px;
+}
 form{
     display: flex;
     flex-direction: column;
@@ -202,7 +206,7 @@ form{
 label{
     display: inline-block;
     margin-left: 0.5rem;
-    margin-right: 1rem;
+    margin-right: 0.66rem;
 }
 textarea{
     display: flex;
@@ -312,7 +316,20 @@ button, input{
 /*media queries*/
 @media (max-width: 1070px) {
     .task-grid{
-        width: 300px;
+        width: 500px;
         margin-left: 1.25rem;
+    }
+}
+@media (max-width: 840px){
+    .task-grid{
+        width: 300px;
+    }
+}
+@media (max-width: 650px){
+    .main{
+        display: none;
+    }
+    .sidebar{
+        width: 100vh;
     }
 }
