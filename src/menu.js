@@ -1,4 +1,4 @@
-export default function displayMenu() {
+export default function menuToggle() {
     const sidebar = document.querySelector(".sidebar");
     const hamburger = document.querySelector(".menuButton");
     const main = document.querySelector(".main");

@@ -1,8 +1,8 @@
-import displayMenu from "./menu"
-import Project from "./Project"
+import menuToggle from "./menu"
+import { projects } from "./projects"
 import "./css/reset.css"
 import "./css/style.css"
 
 
-Project()
-displayMenu()
+projects()
+menuToggle()
