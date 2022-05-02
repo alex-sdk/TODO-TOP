@@ -1,7 +1,32 @@
-export { projects, defaultProject };
-import { createModal, openModal } from "./modal";
+export { projects, defaultProject};
+import { createModal, openModal} from "./modal";
 import { createTaskElements } from "./tasks";
     
+class Project{
+    constructor(Title, Tasks, projects) {
+        this.Title = Title;
+        this.Tasks = Tasks;
+        this.projects = projects;
+        this.numberOfProjects = projects.length
+    }
+
+    createTask() {
+        createModal()
+        openModal()
+        createTaskElements()
+    }
+    addTaskToList = (task) => {
+        this.Tasks.push(task);
+    }
+    addProject = (Title) => {
+        this.projects.push(Title);
+    }
+    removeProject = (div) => {
+        projectList.removeChild(div);
+        this.projects.splice(this.projects.indexOf(div.innerText))
+    }
+}
+
 function clickAddProject() {
     
     function removeInputElements() {
@@ -75,38 +100,7 @@ function projects() {
     addProjectBtn.addEventListener("click", clickAddProject);
     addTaskBtn.addEventListener("click", defaultProject.createTask);
 }
-class Project{
-    constructor(Title, Tasks, projects) {
-        this.Title = Title;
-        this.Tasks = Tasks;
-        this.projects = projects;
-        this.numberOfProjects = projects.length
-    }
 
-    createTask() {
-        createModal()
-        openModal()
-        createTaskElements()
-    }
-
-    addProject = (Title) => {
-        this.projects.push(Title);
-    }
-    removeProject = (div) => {
-        projectList.removeChild(div);
-        this.projects.splice(this.projects.indexOf(div.innerText))
-    }
-
-}
-class Task {
-    constructor(project, checkBox, name, date, description) {
-        this.project = project;
-        this.checkBox = checkBox;
-        this.name = name;
-        this.date = date;
-        this.description = description;
-    }
-}
 const defaultTitle = "Project";
 const allTasks = [];
 const allProjects = [];
@@ -117,8 +111,7 @@ const addProjectBtn = document.getElementById("addProject");
 const addTaskBtn = document.querySelector(".addButtonStyling");
 
 
-//on submit grab data from modal element
-//create task object
+
 //push task object to according project list
 //side bar project buttons on click display project task lists sorted by date
 //home button functionality

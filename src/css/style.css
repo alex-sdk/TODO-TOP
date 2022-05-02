@@ -129,6 +129,7 @@ footer{
 }
 .title{
     width: 25%;
+    word-wrap: break-word;
 }
 .details{
     text-align: left;

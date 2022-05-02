@@ -1,5 +1,15 @@
 export { createTaskElements }
-
+import { closeModal } from "./modal";
+import { defaultProject } from "./projects";
+class Task {
+    constructor(project, checkBox, name, date, description) {
+        this.project = project;
+        this.checkBox = checkBox;
+        this.name = name;
+        this.date = date;
+        this.description = description;
+    }
+}
 function createTaskElements() {
     const taskList = document.querySelector(".tasksContainer");
     const taskContainer = document.createElement("div");
@@ -13,7 +23,6 @@ function createTaskElements() {
 
     const title = document.createElement("div");
     title.classList.add("title");
-    title.innerText = "test";
 
     const date = document.createElement("input");
     date.classList.add("date");
@@ -33,16 +42,26 @@ function createTaskElements() {
 
     const details = document.createElement("div");
     details.classList.add("details");
-    details.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero cum sed architecto, dicta, ratione a cupiditate consectetur excepturi esse nihil deleniti error! Autem praesentium, dicta pariatur officia itaque quam nemo.lorem"
 
+    editButton.append(editSvg);
+    deleteButton.append(deleteSvg);
+    task.append(checkbox, title, date, editButton, deleteButton);
+    taskContainer.append(task, details);
 
     const form = document.querySelector(".form");
     form.addEventListener("submit", (e) => { 
-        editButton.append(editSvg);
-        deleteButton.append(deleteSvg);
-        task.append(checkbox, title, date, editButton, deleteButton);
-        taskContainer.append(task, details);
+        const taskTitle = document.getElementById("Task").value;
+        const dateData = document.getElementById("Date").value;
+        const detailsData = document.getElementById("Description").value;
+        const projectName = document.querySelector(".projectname").innerText;
+        
         taskList.append(taskContainer);
+        
+        title.innerText = taskTitle;
+        date.value = dateData;
+        details.innerText = detailsData;
+        defaultProject.addTaskToList(new Task(projectName, checkbox.checked, taskTitle, dateData, detailsData));
+        closeModal()
         e.preventDefault()
     });
 }

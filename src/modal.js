@@ -1,4 +1,4 @@
-export {createModal, openModal}
+export {createModal, openModal, closeModal}
 function createModal() {
     function createDivContainers(name, required, maxlen, minlen, type) {
         const div = document.createElement("div");
