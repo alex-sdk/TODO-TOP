@@ -21,6 +21,7 @@ function createModal() {
         return div;
     }
     const form = document.createElement("form");
+    form.classList.add("form");
     
     const closeButton = document.createElement("button");
     closeButton.id = "close-modal";

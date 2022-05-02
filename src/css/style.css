@@ -72,7 +72,7 @@ footer{
     display: grid;
     height: 90%;
     grid-template-rows: 40px auto;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-left: 3.5rem;
     margin-top: 1rem;
 }
@@ -89,7 +89,7 @@ footer{
     flex-direction: column;
     justify-content: space-evenly;
     grid-row: 2/3;
-    grid-column: 1/2;
+    grid-column: 1/4;
 }
 .date-grid{
     grid-row: 1/2;
@@ -101,7 +101,7 @@ footer{
 }
 .projectname{
     grid-row: 1/2;
-    grid-column: 1/2;
+    grid-column: 2/3;
     font-weight: bold;
     line-height: 100%;
     text-align: center;
@@ -283,8 +283,8 @@ button, input{
     padding: 10px;
 }
 .addButtonStyling{
-    width: 50%;
-    align-self: center;
+    grid-column: 2/3;
+    grid-row:  3/3;
 }
 .fa-svg{
     background-color: inherit;
@@ -315,6 +315,12 @@ button, input{
 
 /*media queries*/
 @media (max-width: 1070px) {
+    .tasklist{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .task-grid{
         width: 500px;
         margin-left: 1.25rem;

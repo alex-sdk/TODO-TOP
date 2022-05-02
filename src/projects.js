@@ -1,5 +1,6 @@
 export { projects, defaultProject };
-import { createModal, openModal } from "./modal";   
+import { createModal, openModal } from "./modal";
+import { createTaskElements } from "./tasks";
     
 function clickAddProject() {
     
@@ -85,6 +86,7 @@ class Project{
     createTask() {
         createModal()
         openModal()
+        createTaskElements()
     }
 
     addProject = (Title) => {
@@ -97,7 +99,8 @@ class Project{
 
 }
 class Task {
-    constructor(checkBox, name, date, description) {
+    constructor(project, checkBox, name, date, description) {
+        this.project = project;
         this.checkBox = checkBox;
         this.name = name;
         this.date = date;
@@ -113,3 +116,12 @@ const projectList = document.querySelector(".projects");
 const addProjectBtn = document.getElementById("addProject");
 const addTaskBtn = document.querySelector(".addButtonStyling");
 
+
+//on submit grab data from modal element
+//create task object
+//push task object to according project list
+//side bar project buttons on click display project task lists sorted by date
+//home button functionality
+//edit task button functionality
+//delete task button functionality
+//local storage
