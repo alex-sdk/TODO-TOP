@@ -1,19 +1,18 @@
 export { projects, defaultProject};
 import { createModal, openModal} from "./modal";
-import { createTaskElements } from "./tasks";
+import { createTaskElements, createNewTaskFromModal } from "./tasks";
     
 class Project{
     constructor(Title, Tasks, projects) {
         this.Title = Title;
         this.Tasks = Tasks;
         this.projects = projects;
-        this.numberOfProjects = projects.length
     }
 
     createTask() {
         createModal()
         openModal()
-        createTaskElements()
+        createNewTaskFromModal()
     }
     addTaskToList = (task) => {
         this.Tasks.push(task);
@@ -47,16 +46,28 @@ function clickAddProject() {
         removeProjectBtn.classList.add("ha-svg");
         removeProjectBtn.append(trashcanImg);
 
-        project.append(projectListBtn);
-        project.append(removeProjectBtn)
+        project.append(projectListBtn, removeProjectBtn);
         projectList.append(project);
 
         defaultProject.addProject(project.innerText);
-        console.log(defaultProject.projects);
+        console.log(defaultProject);
 
         removeProjectBtn.addEventListener("click", () => {
             defaultProject.removeProject(project);
-            console.log(defaultProject.projects)
+            console.log(defaultProject)
+        });
+
+        projectListBtn.addEventListener("click", () => {
+            const projectName = document.querySelector(".projectname");
+            projectName.innerText = projectListBtn.innerText;
+            const tasksContainer = document.querySelector(".tasksContainer");
+            tasksContainer.replaceChildren()
+
+            defaultProject.Tasks.forEach(taskObject => {
+                if (taskObject.project == projectName.innerText) {
+                    createTaskElements(taskObject);                 
+                }
+            }); 
         });
     }
 
@@ -78,9 +89,7 @@ function clickAddProject() {
     input.setAttribute('type', "text");
     input.classList.add("inputProject");
     
-    projectList.append(input);
-    projectList.append(checkmarkBtn);
-    projectList.append(deleteBtn);
+    projectList.append(input, checkmarkBtn, deleteBtn);
     addProjectBtn.disabled = true;
 
     checkmarkBtn.addEventListener("click", () => {
@@ -99,6 +108,14 @@ function clickAddProject() {
 function projects() {    
     addProjectBtn.addEventListener("click", clickAddProject);
     addTaskBtn.addEventListener("click", defaultProject.createTask);
+    document.querySelector(".home").addEventListener("click", () => {
+        const tasksContainer = document.querySelector(".tasksContainer");
+        tasksContainer.replaceChildren()
+        document.querySelector(".projectname").innerText = "Projects";
+        defaultProject.Tasks.forEach(task => {
+            createTaskElements(task); 
+        });
+    });
 }
 
 const defaultTitle = "Project";
