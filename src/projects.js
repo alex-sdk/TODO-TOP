@@ -3,8 +3,7 @@ import { createModal, openModal} from "./modal";
 import { createTaskElements, createNewTaskFromModal } from "./tasks";
     
 class Project{
-    constructor(Title, Tasks, projects) {
-        this.Title = Title;
+    constructor(Tasks, projects) {
         this.Tasks = Tasks;
         this.projects = projects;
     }
@@ -111,27 +110,26 @@ function projects() {
     document.querySelector(".home").addEventListener("click", () => {
         const tasksContainer = document.querySelector(".tasksContainer");
         tasksContainer.replaceChildren()
-        document.querySelector(".projectname").innerText = "Projects";
+        document.querySelector(".projectname").innerText = "";
         defaultProject.Tasks.forEach(task => {
             createTaskElements(task); 
         });
     });
 }
 
-const defaultTitle = "Project";
 const allTasks = [];
 const allProjects = [];
-const defaultProject = new Project(defaultTitle, allTasks, allProjects);
+const defaultProject = new Project(allTasks, allProjects);
 
 const projectList = document.querySelector(".projects");
 const addProjectBtn = document.getElementById("addProject");
 const addTaskBtn = document.querySelector(".addButtonStyling");
 
 
-
-//push task object to according project list
-//side bar project buttons on click display project task lists sorted by date
-//home button functionality
+//properly manage data on deletion
+//update checkmark data
+//styling task if checked off
+//sort by date
 //edit task button functionality
 //delete task button functionality
 //local storage
