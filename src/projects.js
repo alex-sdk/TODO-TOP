@@ -1,4 +1,4 @@
-export { projects, defaultProject};
+export { projectEventListeners, defaultProject};
 import { createModal, openModal} from "./modal";
 import { createTaskElements, createNewTaskFromModal } from "./tasks";
     
@@ -104,7 +104,7 @@ function clickAddProject() {
     });
 } 
 
-function projects() {    
+function projectEventListeners() {    
     addProjectBtn.addEventListener("click", clickAddProject);
     addTaskBtn.addEventListener("click", defaultProject.createTask);
     document.querySelector(".home").addEventListener("click", () => {
